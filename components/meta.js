@@ -5,11 +5,13 @@ export default ({
   name = '@lachlanjc',
   title = 'mosaiccc',
   description = 'A chaotic, editable layout experiment by @lachlanjc.',
-  image = 'https://cdn.glitch.com/2d084c8d-c390-4414-a1fd-15fc40d2120a%2Fpublic-jpeg.jpeg?v=1589869186333',
-  url = 'https://mosaiccc.glitch.me/'
+  image = 'https://cloud-9lzjxg2wo-lachlan-jc.vercel.app/public-jpeg.jpeg?v=1589869186333',
+  url = 'https://mosaiccc-lachlanjc.vercel.app/'
 }) => (
   <Head>
-    <title>{title} – {name}</title>
+    <title>
+      {title} – {name}
+    </title>
     <meta property="og:title" content={title} />
     <meta name="twitter:title" content={title} />
     <meta name="og:url" content={url} />

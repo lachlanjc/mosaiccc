@@ -19,14 +19,14 @@ export default () => {
     value: sample(['', sample(collections), sample(objects)])
   })
 
-  const pushCell = () => setCells(c => [genCell(), ...c])
+  const pushCell = () => setCells((c) => [genCell(), ...c])
 
   useEffect(() => {
     times(200, pushCell)
   }, [])
 
   const soundUrl =
-    'https://cdn.glitch.com/2d084c8d-c390-4414-a1fd-15fc40d2120a%2FMetallic_Clank.mp3?v=1589870359433'
+    'https://cloud-9lzjxg2wo-lachlan-jc.vercel.app/Metallic_Clank.mp3?v=1589870359433'
 
   // const [playbackRate, setPlaybackRate] = useState(0.75)
 
@@ -41,13 +41,17 @@ export default () => {
       'resize',
       'paste',
       'afterprint'
-    ].map(n =>
-      document.addEventListener(n, () => {
-        pushCell()
-        // setPlaybackRate(playbackRate + 0.1)
-        window.play()
-        console.log('played')
-      }, { passive: true })
+    ].map((n) =>
+      document.addEventListener(
+        n,
+        () => {
+          pushCell()
+          // setPlaybackRate(playbackRate + 0.1)
+          window.play()
+          console.log('played')
+        },
+        { passive: true }
+      )
     )
     return () => {
       events.map(document.removeEventListener)
